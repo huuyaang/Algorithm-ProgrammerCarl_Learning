@@ -2,7 +2,7 @@
 
 ### Leetcode 977.有序数组的平方
 
-> [Leetcode题目链接]([977. 有序数组的平方 - 力扣（LeetCode）](https://leetcode.cn/problems/squares-of-a-sorted-array/))
+> [Leetcode题目链接](https://leetcode.cn/problems/squares-of-a-sorted-array/)
 
 #### 题目简介
 
@@ -52,7 +52,7 @@
 
 ### Leetcode 209.长度最小的字数组
 
-> [Leetcode题目链接]([209. 长度最小的子数组 - 力扣（LeetCode）](https://leetcode.cn/problems/minimum-size-subarray-sum/))
+> [Leetcode题目链接](https://leetcode.cn/problems/minimum-size-subarray-sum/)
 
 #### 题目简介
 
@@ -95,7 +95,7 @@
 
 ### Leetcode 59.螺旋矩阵Ⅱ
 
-> [Leetcode题目链接]()
+> [Leetcode题目链接](https://leetcode.cn/problems/spiral-matrix-ii/)
 
 #### 题目简介
 
@@ -152,8 +152,6 @@ public:
     }
 };
 ```
-
-
 
 #### 相关题目
 

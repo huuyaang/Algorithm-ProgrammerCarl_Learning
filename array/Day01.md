@@ -1,8 +1,7 @@
 ## Day01：Leetcode 704.二分查找、27.移出元素
 
 ### Leetcode 704.二分查找
-
-> [Leetcode题目链接]([704. 二分查找 - 力扣（LeetCode）](https://leetcode.cn/problems/binary-search/))
+> [Leetcode题目链接](https://leetcode.cn/problems/binary-search/)
 
 #### 题目简介：
 
@@ -30,7 +29,6 @@ int search(int* nums, int numsSize, int target){
     return -1;
 }
 ```
-
 - 情况二：左闭右开
 
 ```c
@@ -52,12 +50,6 @@ int search (int* nums, int numsSize, int target) {
 }
 ```
 
-#### 出现的错误：
-
-可能存在的溢出错误
-
-死循环导致的时间超出限制
-
 #### 相关题目：
 
 - Leetcode 35.搜索插入位置
@@ -67,7 +59,7 @@ int search (int* nums, int numsSize, int target) {
 
 ### Leetcode 27.移除元素
 
-> [Leetcode题目链接]([27. 移除元素 - 力扣（LeetCode）](https://leetcode.cn/problems/remove-element/))
+> [Leetcode题目链接](https://leetcode.cn/problems/remove-element/)
 
 #### 题目简介：
 
@@ -76,8 +68,6 @@ int search (int* nums, int numsSize, int target) {
 #### 解题思路：
 
 - 思路一：暴力破解
-
-![image-20221228000101738](https://blog-1304194110.cos.ap-nanjing.myqcloud.com/image-20221228000101738.png)
 
 ```c++
 // 时间复杂度：O(n^2)
@@ -100,12 +90,11 @@ public:
 };
 ```
 
-- 思路二：双指针（快慢指针法）
-
-  - 双指针解法一（不改变元素相对位置，需要移动较多的元素，复杂度稍高）
-
+- 思路二：双指针
+  - 双指针解法一（快慢指针法）（不改变元素相对位置，需要移动较多的元素，复杂度稍高）
+  
     ![image-20221228173325065](https://blog-1304194110.cos.ap-nanjing.myqcloud.com/image-20221228173325065.png)
-
+  
   ```c++
   //时间复杂度O(n)
   //空间复杂度O(1)
@@ -122,15 +111,41 @@ public:
       }
   };
   ```
-
   
-
-  - 双指针解法二（改变相对位置，可以使移动的元素更少，复杂度较低）
-
+  
+  
+  - 双指针解法二（双向双指针法）（改变相对位置，可以使移动的元素更少，复杂度较低）
+  
   ```c++
-  待补充
+  /**
+  * 相向双指针方法，基于元素顺序可以改变的题目描述改变了元素相对位置，确保了移动最少元素
+  * 时间复杂度：O(n)
+  * 空间复杂度：O(1)
+  */
+  class Solution {
+  public:
+      int removeElement(vector<int>& nums, int val) {
+          int leftIndex = 0;
+          int rightIndex = nums.size() - 1;
+          while (leftIndex <= rightIndex) {
+              // 找左边等于val的元素
+              while (leftIndex <= rightIndex && nums[leftIndex] != val){
+                  ++leftIndex;
+              }
+              // 找右边不等于val的元素
+              while (leftIndex <= rightIndex && nums[rightIndex] == val) {
+                  -- rightIndex;
+              }
+              // 将右边不等于val的元素覆盖左边等于val的元素
+              if (leftIndex < rightIndex) {
+                  nums[leftIndex++] = nums[rightIndex--];
+              }
+          }
+          return leftIndex;   // leftIndex一定指向了最终数组末尾的下一个元素
+      }
+  };
   ```
-
+  
   
 
 
