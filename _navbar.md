@@ -5,5 +5,5 @@
 * [链表](/list/README.md)
 * [哈希表](/hash/README.md)
 * [字符串](/string/README.md)
-* [双指针](/doubleindex/README.md)
-* [栈和队列]()
+* [双指针](/doubleindex/双指针专题总结.md)
+* [栈和队列](/stack&queue/README.md)
