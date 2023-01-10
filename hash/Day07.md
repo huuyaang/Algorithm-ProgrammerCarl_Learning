@@ -5,7 +5,6 @@
 #### 题解
 
 ```c++
-//部分代码不懂
 class Solution {
 public:
     int fourSumCount(vector<int>& nums1, vector<int>& nums2, vector<int>& nums3, vector<int>& nums4) {
@@ -29,8 +28,6 @@ public:
     }
 };
 ```
-
-
 
 ### Leetcode  383.赎金信
 
